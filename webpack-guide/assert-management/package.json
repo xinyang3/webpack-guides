@@ -1,5 +1,5 @@
 {
-  "name": "webpack-demo",
+  "name": "webpack-guide",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "watch": "webpack --watch",
     "start": "webpack-dev-server --open",
-    "build": "webpack"
+    "build": "../node_modules/.bin/webpack --config  webpack.js"
   },
   "keywords": [],
   "author": "",

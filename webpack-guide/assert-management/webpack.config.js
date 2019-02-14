@@ -11,13 +11,13 @@ module.exports = {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: './out',
     hot: true
   },
   plugins: [
-    new CleanWebpackPlugin(['dist']),
+    new CleanWebpackPlugin(['out']),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'assert management'
     }),
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin()
@@ -25,7 +25,7 @@ module.exports = {
   output: {
     filename: 'bundle.js',
     filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'out')
   },
   module: {
     rules: [{
