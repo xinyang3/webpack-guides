@@ -5,17 +5,20 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: {
-    print: './src/print.js',
-    app: './src/index.js',
-    math: './src/math.js'
+    // print: './src/print.js',
+    // app: './src/index.js',
+    // math: './src/math.js'
   },
+  // 开发环境下找到错误、警告位置
   devtool: 'inline-source-map',
   devServer: {
     contentBase: './out',
     hot: true
   },
   plugins: [
+    // 打包前 清理out文件夹
     new CleanWebpackPlugin(['out']),
+    // 重新生成index.html
     new HtmlWebpackPlugin({
       title: 'assert management'
     }),
@@ -37,6 +40,12 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|gif)$/,
+        use: [
+          'file-loader'
+        ]
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
         use: [
           'file-loader'
         ]
