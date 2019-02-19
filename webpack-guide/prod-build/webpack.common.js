@@ -13,7 +13,7 @@
      })
    ],
    output: {
-     filename: '[name].bundle.js',
+     filename: process.env.NODE_ENV === 'production' ? '[name].[hash].bundle.js' : '[name].bundle.js',
      path: path.resolve(__dirname, 'dist')
    }
  };
