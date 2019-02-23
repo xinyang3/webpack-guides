@@ -4,6 +4,7 @@
  const webpack = require('webpack');
 
  module.exports = merge(common, {
+    mode: 'production',
     devtool: 'source-map',
     plugins: [
         new UglifyJSPlugin({
